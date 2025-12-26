@@ -46,6 +46,7 @@ This document outlines the recommended directory structure for your 10-month jou
     ├── phase-02-systems/   # Git Submodules
     ├── phase-03-infra/     # Git Submodules
     └── phase-04-protocol/  # Git Submodules
+```
 
 ## Folder Explanations
 
