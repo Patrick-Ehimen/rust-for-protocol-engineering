@@ -9,8 +9,8 @@ This repository contains the ultimate 10-month roadmap for mastering Rust in the
 ### Key Highlights
 - **10 Months** of structured, intense learning.
 - **36 Projects** ranging from CLI utilities to custom Virtual Machines and L2 Sequencers.
+- **Ethereum Protocol Deep-Dive**: Integrated modules from the [Ethereum Protocol Fellowship (EPF) Wiki](https://epf.wiki/).
 - **Zero to Hero**: Dedicated Month 1 "Beginner Bootcamp" to ground the learner in Rust's unique memory model.
-- **Systems-First**: Focused strictly on infrastructure (Networking, VMs, Consensus) rather than smart contract high-level logic.
 
 ---
 
