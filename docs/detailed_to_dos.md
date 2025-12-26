@@ -1,93 +1,64 @@
-# Detailed To-Dos: 10-Month Rust Blockchain Journey
+# Ultimate To-Do List: 36 Projects to Rust Mastery
 
-This document provides a week-by-week style breakdown of tasks to keep you on track.
+This is the hyper-granular breakdown for the combined roadmap.
 
-## Month 1: Rust Beginner Bootcamp
-- [ ] **Week 1: Setup & Syntax**
-    - [ ] Install `rustup`, `cargo`, and VS Code (`rust-analyzer`).
-    - [ ] Read Chapters 1-5 of [The Book](https://doc.rust-lang.org/book/).
-    - [ ] Complete Rustlings: `intro`, `variables`, `functions`, `if`, `move_semantics`.
-- [ ] **Week 2: Data Structures & Control Flow**
-    - [ ] Read Chapters 6-9 of The Book.
-    - [ ] Complete Rustlings: `structs`, `enums`, `strings`, `modules`, `error_handling`.
-- [ ] **Week 3: Ownership & Lifetimes**
-    - [ ] Read Chapter 10 and 15 of The Book.
-    - [ ] Complete Rustlings: `generics`, `traits`, `lifetimes`.
-- [ ] **Week 4: Project Zero**
-    - [ ] Build a CLI that takes a string and prints it in Morse Code.
-    - [ ] Complete all remaining Rustlings (up to `threads`/`macros`).
+## Month 1: The Gauntlet (16 Projects)
+### Week 1: Foundations
+- [ ] **1. Universal Converter**: Use `std::io` and `f64`.
+- [ ] **2. Guessing Game**: Implement "Limited Tries" and "High Score" file.
+- [ ] **3. Crypto Price Tracker**: Use `reqwest` and `serde_json` to fetch Binance API.
+- [ ] **4. System Monitor TUI**: Use `sysinfo` and `ratatui` for a live graph.
 
----
+### Week 2: Data & Files
+- [ ] **5. Markdown Parser**: Regex-based conversion of `#` and `*`.
+- [ ] **6. Todo CLI**: Implement `JSON` serialization for persistence.
+- [ ] **7. Log Anonymizer**: Replace IP addresses and Emails in logs with `[MASKED]`.
+- [ ] **8. Static Site Generator**: Watch a folder for `.md` files and output `.html`.
 
-## Phase 1: Core & Data Tooling (Months 2-3)
-### Project 1: Vault-CLI
-- [ ] Initialize repo with `cargo init`.
-- [ ] Add dependencies: `clap`, `aes-gcm`, `argon2`, `serde`, `rpassword`.
-- [ ] Implement master password hashing with Argon2.
-- [ ] Implement file-based storage for encrypted JSON.
-- [ ] Implement CLI commands: `add`, `get`, `list`, `delete`.
+### Week 3: Abstractions
+- [ ] **9. Character Generator**: Use a `Generate` trait for different classes (Mage, Warrior).
+- [ ] **10. Custom Error Logger**: Use `thiserror` for domain-specific errors.
+- [ ] **11. File Vault**: Use `chacha20poly1305` for secure local storage.
+- [ ] **12. HTTP Health Checker**: Use `tokio` to ping 10 URLs concurrently.
 
-### Project 2: Chain-Indexer (v1)
-- [ ] Set up a local PostgreSQL instance (Docker is recommended).
-- [ ] Use `alloy-rs` to connect to a public RPC (Infura/Alchemy).
-- [ ] Create database migrations for `blocks` and `transactions`.
-- [ ] Write a "worker" loop that fetches block `N` and saves it.
-- [ ] Handle re-orgs/chain forks (basic logic: check block hash of `N-1`).
+### Week 4: Networking
+- [ ] **13. TCP Echo Server**: Handle concurrent clients with `std::thread`.
+- [ ] **14. Parallel Port Scanner**: Use `mpsc` to collect results from 100 threads.
+- [ ] **15. TCP Load Balancer**: Implement Round-Robin distribution.
+- [ ] **16. Backup Script**: Use `walkdir` to recursively copy modified files.
 
 ---
 
-## Phase 2: Async & Networking (Months 4-5)
-### Project 3: RPC Proxy
-- [ ] Build a basic HTTP server using `axum`.
-- [ ] Implement request forwarding to a real node.
-- [ ] Add `moka` or `lru` crate for response caching.
-- [ ] Configure `tower-governor` for rate limiting.
-
-### Project 4: libp2p Gossip Node
-- [ ] Spawn a libp2p Swarm with TCP transport.
-- [ ] Implement `KeepAlive` and `mDNS` for local peer discovery.
-- [ ] Integrate `Gossipsub` and create a "Chat" CLI to verify messages.
-
-### Project 5: Mempool Watcher
-- [ ] Connect to an Ethereum node via `WebSocket`.
-- [ ] Subscribe to `newPendingTransactions`.
-- [ ] Filter transactions in real-time by `gas_price` > `X`.
+## Phase 1: Data Analytics (Projects 17-21)
+- [ ] **17. Vault-CLI**: Master `clap` subcommands.
+- [ ] **18. Vault-CLI Plus**: Integrate `keyring` crate for OS-level secret storage.
+- [ ] **19. Chain-Indexer**: Use `alloy` to sync blocks from Eth Sepolia.
+- [ ] **20. Multi-Chain Indexer**: Concurrent syncing of Eth and Solana into a single DB.
+- [ ] **21. Portfolio CLI**: Build a "Tax Report" generator based on indexed trades.
 
 ---
 
-## Phase 3: Infrastructure & VMs (Months 6-7)
-### Project 6: Block Explorer API
-- [ ] Build sophisticated SQL queries for "Address Portfolio".
-- [ ] Implement pagination for transaction lists.
-- [ ] Add a caching layer (Redis) for high-traffic endpoints.
-
-### Project 7: Rust-VM
-- [ ] Define `Instruction` enum (Add, Sub, Push, Pop).
-- [ ] Implement the `VirtualMachine` struct with `stack: Vec<u64>`.
-- [ ] Add a `run()` loop that executes byte arrays.
-- [ ] Implement `Gas` counter that decrements per instruction.
-
-### Project 8: Consensus Engine
-- [ ] Implement `Proposal` and `Vote` structs.
-- [ ] Use `ed25519-dalek` to sign votes.
-- [ ] Implement a simple "Pre-commit" -> "Commit" state machine.
+## Phase 2: Networking & DeFi (Projects 22-27)
+- [ ] **22. RPC Proxy**: Implement basic GET request forwarding.
+- [ ] **23. High-QPS Proxy**: Add `redis` caching for `eth_getBalance`.
+- [ ] **24. Gossip Node**: Build a "Join/Leave" peer discovery mechanism.
+- [ ] **25. P2P File Sharer**: Implement piece-by-piece file transfer.
+- [ ] **26. Mempool Watcher**: Detect "Large Whale Transfers" in real-time.
+- [ ] **27. Arbitrage Dashboard**: Stream Uniswap vs Sushiswap prices via WebSockets.
 
 ---
 
-## Phase 4: Scaling & L2s (Months 8-9)
-### Project 9: Rollup Sequencer
-- [ ] Implement a "World State" (HashMap of Address -> Balance).
-- [ ] Create a `Transaction` type (From, To, Amount, Nonce).
-- [ ] Build a `Batch` logic that computes the Merkle Root of 100 transactions.
-
-### Project 10: Custom PoS Node
-- [ ] Create the main `Node` entry point.
-- [ ] Glue Project 4 (Networking) to Project 7 (VM).
-- [ ] Ensure nodes can send each other Blocks and sync state.
+## Phase 3: Core & VMs (Projects 28-33)
+- [ ] **28. Block Explorer API**: Write complex SQL for "Token Holder Lists".
+- [ ] **29. Explorer TUI**: Build a dashboard to view the API data in terminal.
+- [ ] **30. Rust-VM**: Implement `Push`, `Add`, `Mul`, `Stop`.
+- [ ] **31. Gas-VM**: Add memory limits and instruction costs.
+- [ ] **32. Consensus Engine**: Implement a "Leader Election" timer.
+- [ ] **33. BFT Governance**: Implement "Weighted Voting" based on mock stakes.
 
 ---
 
-## Month 10: Industry Readiness
-- [ ] **GitHub Cleanup**: Add READMEs, Architects diagrams (Mermaid), and CI tests.
-- [ ] **Open Source**: Submit a PR (even if just a doc fix) to `ethers-rs` or `solana`.
-- [ ] **Mock Interviews**: Practice "System Design for a Distributed Sequencer".
+## Phase 4: Protocol Level (Projects 34-36)
+- [ ] **34. Rollup Sequencer**: Implement a `state_root` calculation.
+- [ ] **35. ZK-Verifier**: Implement a service that accepts Groth16 proofs.
+- [ ] **36. PoS Node**: Link P2P messaging to the VM execution loop.
