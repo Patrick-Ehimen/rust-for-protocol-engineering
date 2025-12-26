@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "01-universal-converter",
+    "02-guessing-game",
+    "03-crypto-tracker",
+    "04-system-monitor-tui",
+]
+
+resolver = "2"

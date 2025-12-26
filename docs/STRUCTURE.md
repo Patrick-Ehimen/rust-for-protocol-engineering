@@ -34,12 +34,13 @@ This document outlines the recommended directory structure for your 10-month jou
 │   └── cryptography/       # ZK proofs, hashing, signatures
 │
 └── projects/               # The 36 Major Projects
-    ├── month-01-gauntlet/  # 16 Mini-projects (Local folders)
-    │   ├── 01-converter/
+    ├── month-01-gauntlet/  # [Cargo Workspace] 16 Mini-projects
+    │   ├── Cargo.toml      # Workspace root
+    │   ├── 01-converter/   # Individual packages
     │   ├── 02-guessing-game/
     │   └── ...
     │
-    ├── phase-01-data/      # Git Submodules (Standalone Repos)
+    ├── phase-01-data/      # [Git Submodules] Standalone Repos
     │   ├── vault-cli-plus @[repo-hash]
     │   └── chain-indexer @[repo-hash]
     │
@@ -49,8 +50,12 @@ This document outlines the recommended directory structure for your 10-month jou
 
 ## Folder Explanations
 
-### Git Submodules
-From **Month 2** onwards, each project is a heavy-duty system. Instead of being local folders, these will be **standalone Git repositories**.
+### Cargo Workspace (Month 1)
+For **Month 1**, we use a single [Cargo Workspace](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html).
+- **Why?** You will build 16 small projects. Creating 16 separate repos is overkill. A workspace allows them to share a compilation cache and dependencies (like `tokio` and `serde`), making your learning much faster and your workspace cleaner.
+
+### Git Submodules (Month 2+)
+From **Month 2** onwards, projects become substantial systems. These will be **standalone Git repositories**.
 - **Why?** This makes your portfolio look professional. Each project gets its own GitHub stars, CI/CD pipelines, and separate documentation.
 - **Integration**: We link them to this roadmap repository using `git submodule add <repo-url>`.
 

@@ -1,0 +1,1 @@
+/Users/apple/Desktop/Rustacean/rust-for-protocol-engineering/projects/month-01-gauntlet/target/debug/universal_converter: /Users/apple/Desktop/Rustacean/rust-for-protocol-engineering/projects/month-01-gauntlet/01-universal-converter/src/main.rs
