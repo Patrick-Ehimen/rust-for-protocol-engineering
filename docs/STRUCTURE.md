@@ -61,7 +61,10 @@ Think of this as your "drafting board." It’s for small, non-permanent code sni
 Protocol engineering requires following strict rules. Store the Ethereum Yellow Paper, EIPs (Ethereum Improvement Proposals), and Consensus specs here for quick offline access.
 
 ### `scripts/`
-As you build indexers and nodes, you'll need automation (e.g., to clear a database, restart a local node, or generate test keys). Keep these utilities here.
+In a submodule-based setup, this folder transitions from "project scripts" to **"workspace orchestration."**
+- **Global Setup**: A script to verify you have all the tools needed for the 10-month journey (`rust-check.sh`).
+- **Submodule Management**: A script to update all project repositories at once (`sync-all.sh`).
+- **Provisioning**: Spin up global services like a shared Postgres or Redis instance via Docker that multiple projects might use.
 
 ## Setup Instructions
 1.  **Keep it clean**: Avoid putting non-project specific code in the root.
