@@ -4,8 +4,8 @@ This is the hyper-granular breakdown for the combined roadmap.
 
 ## Month 1: The Gauntlet (16 Projects)
 ### Week 1: Foundations
-- [ ] **1. Universal Converter**: Use `std::io` and `f64`.
-- [ ] **2. Guessing Game**: Implement "Limited Tries" and "High Score" file.
+- [x] **1. Universal Converter**: Use `std::io` and `f64`.
+- [x] **2. Guessing Game**: Implement "Limited Tries" and "High Score" file.
 - [ ] **3. Crypto Price Tracker**: Use `reqwest` and `serde_json` to fetch Binance API.
 - [ ] **4. System Monitor TUI**: Use `sysinfo` and `ratatui` for a live graph.
 - [ ] **Bonus (Ethereum):** Read the [Ethereum Whitepaper](https://ethereum.org/en/whitepaper/) and summarize the Account Model vs UTXO.
